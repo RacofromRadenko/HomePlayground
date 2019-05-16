@@ -1,0 +1,98 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  height: 100%;
+  width: 1170px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  .table-header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    .table-header-row {
+      border: 1px solid #ddd;
+      padding: 7px 5px;
+      -webkit-box-shadow: 0 8px 6px -6px black;
+      -moz-box-shadow: 0 8px 6px -6px black;
+      box-shadow: 0 8px 6px -6px black;
+      .table-header-holder {
+        display: block;
+        position: relative;
+        width: 100%;
+        line-height: 30px;
+        border-bottom: 1px solid #999321;
+        .object-item-titles {
+          display: inline-block;
+          text-align: center;
+          font-size: 12px;
+          font-weight: normal;
+          vertical-align: middle;
+        }
+        .icon-sort-up-container {
+          position: relative;
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+
+          &::after {
+            content: "\f0de";
+            position: absolute;
+            display: block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+          }
+        }
+        .icon-sort-down-container {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+          &::after {
+            content: "\f0dd";
+            display: block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+          }
+        }
+        .icon-remove-item-container {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          vertical-align: middle;
+          cursor: pointer;
+          &::after {
+            content: "\f057";
+            display: block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+}
