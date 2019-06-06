@@ -1,3 +1,10 @@
-<p>
-  table-body works!
-</p>
+<tbody class="table-body-container">
+
+    <tr class="table-row" *ngFor="let businessObject of businessObjects">
+        <td class="table-data">{{businessObject["isActive"]}}</td>
+        <td class="table-data">{{businessObject["id"]}}</td>
+        <td class="table-data">{{businessObject["number"]}}</td>
+        <td class="table-data">{{businessObject["matchcode"]}}</td>
+        <td class="table-data">{{businessObject["designation"]}}</td>
+    </tr>
+</tbody>

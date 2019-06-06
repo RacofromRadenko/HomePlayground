@@ -5,6 +5,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+
+@primaryColor:#a5064d;
+
+
 .container {
   height: 100%;
   width: 1170px;
@@ -13,86 +17,132 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: auto;
-  .table-header-container {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    .table-header-row {
-      border: 1px solid #ddd;
-      padding: 7px 5px;
-      -webkit-box-shadow: 0 8px 6px -6px black;
-      -moz-box-shadow: 0 8px 6px -6px black;
-      box-shadow: 0 8px 6px -6px black;
-      .table-header-holder {
-        display: block;
-        position: relative;
-        width: 100%;
-        line-height: 30px;
-        border-bottom: 1px solid #999321;
-        .object-item-titles {
-          display: inline-block;
-          text-align: center;
-          font-size: 12px;
-          font-weight: normal;
-          vertical-align: middle;
-        }
-        .icon-sort-up-container {
-          position: relative;
-          display: inline-block;
-          width: 22px;
-          height: 22px;
-          text-align: center;
-          vertical-align: middle;
-          cursor: pointer;
 
-          &::after {
-            content: "\f0de";
-            position: absolute;
-            display: block;
-            width: 22px;
-            height: 22px;
-            line-height: 22px;
+  .table-header-container {
+
+    .table-header {
+      position: relative;
+      .table-header-row {
+        border: 1px solid #ddd;
+        padding: 7px 5px;
+        -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black;
+        .table-header-holder {
+          position: relative;
+          width: 154px;
+          line-height: 30px;
+          border-bottom: 1px solid @primaryColor;
+          background-color: #555555;
+          padding: 5px 10px;
+
+          .object-item-titles {
+            display: inline-block;
+            text-align: center;
+            font-size: 16px;
+            vertical-align: middle;
+            color: #ffffff;
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
           }
-        }
-        .icon-sort-down-container {
-          display: inline-block;
-          width: 22px;
-          height: 22px;
-          text-align: center;
-          vertical-align: middle;
-          cursor: pointer;
-          &::after {
-            content: "\f0dd";
-            display: block;
+
+          .icon-sort-up-container {
+            position: relative;
+            display: inline-block;
             width: 22px;
             height: 22px;
-            line-height: 22px;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            color: @primaryColor;
+
+            &::after {
+              content: "\f0de";
+              position: absolute;
+              display: block;
+              width: 22px;
+              height: 22px;
+              line-height: 22px;
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+            }
           }
-        }
-        .icon-remove-item-container {
-          display: inline-block;
-          width: 22px;
-          height: 22px;
-          vertical-align: middle;
-          cursor: pointer;
-          &::after {
-            content: "\f057";
-            display: block;
+
+          .icon-sort-down-container {
+            display: inline-block;
             width: 22px;
             height: 22px;
-            line-height: 22px;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            color: @primaryColor;
+
+            &::after {
+              content: "\f0dd";
+              display: block;
+              width: 22px;
+              height: 22px;
+              line-height: 22px;
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+            }
+          }
+
+          .icon-remove-item-container {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+            cursor: pointer;
+            color: @primaryColor;
+
+            &::after {
+              content: "\f057";
+              display: block;
+              width: 22px;
+              height: 22px;
+              line-height: 22px;
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+            }
           }
         }
       }
     }
   }
+
+  .table-body-container {
+    width: 100%;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    .table-row {
+      width: 100%;
+      background-color: #d6c5b9;
+
+
+      &:nth-child(2n) {
+        background-color: #e2d6ae;
+      }
+
+      .table-data {
+        width: 160px;
+        font-family: "Font Awesome 5 Free";
+        font-size:14px;
+        font-weight: 900;
+        color: #ffffff;
+        text-align: left;
+        padding: 5px 7px;
+        border-spacing: 0;
+        border-collapse: unset;
+      }
+    }
+
+  }
+
 }
+

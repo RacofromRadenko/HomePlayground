@@ -7,6 +7,8 @@ import { TableGridHolderComponent } from './components/table-grid-holder/table-g
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { TableBodyComponent } from './components/table-body/table-body.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { BasicThingsComponent } from './components/basic-things/basic-things.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
     TableGridHolderComponent,
     TableHeaderComponent,
     TableBodyComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    BasicThingsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,13 @@
-<thead class="table-header-container">
-  <tr class="table-header-row" *ngFor="let title of headerTitles">
-    <th class="table-header-holder">
+<div class="table-header-container">
+  <thead class="table-header">
+  <tr class="table-header-row" >
+    <th class="table-header-holder" *ngFor="let title of headerTitles">
       <span class="object-item-titles">{{ title }}</span>
-      <div class="icon-sort-up-container"></div>
-      <div class="icon-sort-down-container"></div>
-      <div class="icon-remove-item-container"></div>
+      <div class="icon-sort-up-container" (click)="ascendingSorting($event, title)"></div>
+      <div class="icon-sort-down-container"  (click)="descendingSorting($event, title)"></div>
+      <div class="icon-remove-item-container"  (click)="removeColomn($event, title)"></div>
     </th>
   </tr>
-</thead>
+  </thead>
+
+</div>
