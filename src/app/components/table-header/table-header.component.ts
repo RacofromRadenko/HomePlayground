@@ -7,8 +7,8 @@ import {Component, OnInit, Input, EventEmitter, Output} from "@angular/core";
 })
 export class TableHeaderComponent implements OnInit {
     @Input() headerTitles: string[];
-    @Output() sortEvent = new EventEmitter<string>();
-    @Output() sortType = new EventEmitter<string>();
+    @Output() sortEvent: EventEmitter<string> = new EventEmitter<string>();
+    @Output() sortType: EventEmitter<string> = new EventEmitter<string>();
 
     constructor() {
     }

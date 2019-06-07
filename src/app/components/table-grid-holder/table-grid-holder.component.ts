@@ -33,46 +33,92 @@ export class TableGridHolderComponent implements OnInit {
 
     sortMetaData(event) {
 
-        let shallowArrayCopy = [...this.businessPartnersObjectsList];
         switch (event) {
             case 'number':
+                const numberObjectValues = this.businessPartnersObjectsList.map(metaTableData => {
+                    return {number: metaTableData['number']}
+                });
 
-                console.log('number');
-                if (this.ascendingSortType) {
-                    console.log('ja usao asc');
-                    shallowArrayCopy.sort((a, b) => {
-                        return (a['number'] - b['number'])
-                    })
-                } else if (this.descendingSortType) {
+                console.log('numberObj', numberObjectValues);
+                const removeNumberObject = this.removeObjectFromArray(this.businessPartnersObjectsList, numberObjectValues);
 
-                    shallowArrayCopy.sort((a, b) => {
-                        return (b['number'] - a['number'])
-                    })
-                }
+                console.log(' remove number', removeNumberObject);
+                const metaTableData = this.businessPartnersObjectsList.map(metaTableData => {
+                    return metaTableData['number']
+                });
+
+                const dajnesto = this.businessPartnersObjectsList.indexOf(metaTableData);
+                console.log('daj', dajnesto);
+                const sortedBusinessObjectPropertyNumber = metaTableData.sort((businessObject1, businessObject2) => {
+                    if (this.ascendingSortType === 'ascending') {
+
+                        console.log('asc');
+                        return businessObject1 - businessObject2
+
+                    } else if (this.descendingSortType === 'descending') {
+
+                        console.log('desc');
+                        return businessObject2 - businessObject1
+                    }
+                })
+                console.log('sorted ', sortedBusinessObjectPropertyNumber);
 
 
                 break;
             case
             'matchcode'
             :
-                console.log('matchcode');
+                this.businessPartnersObjectsList.sort((a, b) => {
+                        if (this.ascendingSortType === 'ascending') {
+                            if (a['matchcode'] > b['matchcode']) {
+                                return -1;
+                            }
+                        } else if (this.descendingSortType === 'descending') {
+                            if (b['matchcode'] < a['matchcode']) {
+                                return 1;
+                            }
+                        }
+                    }
+                );
                 break;
             case
             'id'
             :
-                console.log('id');
+                this.businessPartnersObjectsList.sort((a, b) => {
+                        if (this.ascendingSortType === 'ascending') {
+                            if (a['id'] > b['id']) {
+                                return -1;
+                            }
+                        } else if (this.descendingSortType === 'descending') {
+                            if (b['id'] < a['id']) {
+                                return 1;
+                            }
+                        }
+                    }
+                );
 
                 break;
             case
             'designation'
             :
-                console.log('designation');
+                this.businessPartnersObjectsList.sort((a, b) => {
+                        if (this.ascendingSortType === 'ascending') {
+                            if (a['designation'] > b['designation']) {
+                                return -1;
+                            }
+                        } else if (this.descendingSortType === 'descending') {
+                            if (b['designation'] < a['designation']) {
+                                return 1;
+                            }
+                        }
+                    }
+                );
 
                 break;
 
 
         }
-        return this.businessPartnersObjectsList = [...shallowArrayCopy];
+
     }
 
     sortType(event) {
@@ -85,4 +131,12 @@ export class TableGridHolderComponent implements OnInit {
         }
     }
 
+    removeObjectFromArray(objectArrays, object) {
+        const editedObject = object.map(newObject=> newObject.number)
+        console.log('edited', editedObject);
+        const removedObject = objectArrays.filter(extistingArrayObject => extistingArrayObject['number'] !== object)
+        console.log('removed', removedObject);
+    }
 }
+
+
